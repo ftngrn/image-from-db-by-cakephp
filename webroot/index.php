@@ -54,7 +54,7 @@ if (!defined('APP_DIR')) {
  */
 //define('CAKE_CORE_INCLUDE_PATH',  DS . 'var' . DS . 'www' . DS . 'apps' . DS . 'imagetestcake' . DS . 'Vendor' . DS . 'pear-pear.cakephp.org' . DS . 'CakePHP');
 define('CAKE_CORE_INCLUDE_PATH',  
-		ROOT . DS . 'imagetestcake' . DS . 'Vendor' . DS . 'pear-pear.cakephp.org' . DS . 'CakePHP');
+		ROOT . DS . 'image-from-db-by-cakephp' . DS . 'Vendor' . DS . 'pear-pear.cakephp.org' . DS . 'CakePHP');
 
 /**
  * Editing below this line should NOT be necessary.
