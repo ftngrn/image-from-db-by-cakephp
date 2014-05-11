@@ -52,7 +52,7 @@ if (!defined('APP_DIR')) {
  * The following line differs from its sibling
  * /app/webroot/index.php
  */
-//define('CAKE_CORE_INCLUDE_PATH',  DS . 'var' . DS . 'www' . DS . 'apps' . DS . 'imagetestcake' . DS . 'Vendor' . DS . 'pear-pear.cakephp.org' . DS . 'CakePHP');
+//define('CAKE_CORE_INCLUDE_PATH',  DS . 'var' . DS . 'www' . DS . 'apps' . DS . 'image-from-db-by-cakephp' . DS . 'Vendor' . DS . 'pear-pear.cakephp.org' . DS . 'CakePHP');
 define('CAKE_CORE_INCLUDE_PATH',  
 		ROOT . DS . 'image-from-db-by-cakephp' . DS . 'Vendor' . DS . 'pear-pear.cakephp.org' . DS . 'CakePHP');
 

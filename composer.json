@@ -1,5 +1,5 @@
 {
-    "name": "imagetestcake",
+    "name": "image-from-db-by-cakephp",
     "repositories": [
         {
             "type": "pear",
