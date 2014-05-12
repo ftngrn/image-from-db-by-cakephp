@@ -47,7 +47,7 @@ class ImagesController extends AppController {
 		header(sprintf("Content-type: %s", $image['Image']['mime']));
 		echo $image['Image']['body'];
 
-		//$B2hA|%G!<%?=PNO8e$KM>7W$J=PNO$r$5$;$J$$$?$a=*N;$5$;$k(B
+		//画像データ出力後に余計な出力をさせないため終了させる
 		exit;
 	}
 
