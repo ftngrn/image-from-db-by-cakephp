@@ -40,14 +40,15 @@ class ImagesController extends AppController {
 		$this->layout = false;
 		$this->autoLayout = false;
 		$this->autoRender = false;
+
 		$options = array('conditions' => array('Image.' . $this->Image->primaryKey => $id));
-
-
 		$image =  $this->Image->find('first', $options);
+
 		header(sprintf("Content-type: %s", $image['Image']['mime']));
 		echo $image['Image']['body'];
 
-		//$this->set('image', $this->Image->find('first', $options));
+		//画像データ出力後に余計な出力をさせないため終了させる
+		exit;
 	}
 
 /**
@@ -55,9 +56,14 @@ class ImagesController extends AppController {
  *
  * @return void
  */
-/*	public function add() {
+	public function add() {
 		if ($this->request->is('post')) {
 			$this->Image->create();
+			$file = $this->request->data['Image']['body'];
+			$this->request->data['Image'] = array();
+			$this->request->data['Image']['body'] = file_get_contents($file['tmp_name']);
+			$finfo = new finfo(FILEINFO_MIME_TYPE);
+			$this->request->data['Image']['mime'] = $finfo->file($file['tmp_name']);
 			if ($this->Image->save($this->request->data)) {
 				$this->Session->setFlash(__('The image has been saved.'));
 				return $this->redirect(array('action' => 'index'));
@@ -66,7 +72,7 @@ class ImagesController extends AppController {
 			}
 		}
 	}
-*/
+
 /**
  * edit method
  *
@@ -98,7 +104,7 @@ class ImagesController extends AppController {
  * @param string $id
  * @return void
  */
-/*	public function delete($id = null) {
+	public function delete($id = null) {
 		$this->Image->id = $id;
 		if (!$this->Image->exists()) {
 			throw new NotFoundException(__('Invalid image'));
@@ -111,5 +117,5 @@ class ImagesController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
-*/
+
 }
