@@ -44,11 +44,9 @@ class ImagesController extends AppController {
 		$options = array('conditions' => array('Image.' . $this->Image->primaryKey => $id));
 		$image =  $this->Image->find('first', $options);
 
-		header(sprintf("Content-type: %s", $image['Image']['mime']));
-		echo $image['Image']['body'];
-
-		//画像データ出力後に余計な出力をさせないため終了させる
-		exit;
+		//CakeResponseでContent-typeとbodyを送出する
+		$this->response->type($image['Image']['mime']);
+		$this->response->body($image['Image']['body']);
 	}
 
 /**
